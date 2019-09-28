@@ -67,8 +67,5 @@ group :production do
      gem 'unicorn'
 end
 
-<<<<<<< Updated upstream
 gem 'haml-rails'
-=======
-gem 'haml-rails'
->>>>>>> Stashed changes
+gem 'font-awesome-rails'
