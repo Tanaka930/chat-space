@@ -1,62 +1,19 @@
-.header {
-  background-color: #38AEF0;
-  height: 20px;
-  width: 100%;
-  text-align: center;
-}
-
-.sidebar {
-  height: 100vh;
-  width: 300px;
-  float: left;
-  display: block;
-  background-color: #2f3e51;
-  position: relative;
-  &__main {
-    background-color: #253541;
-    padding: 35px 20px 35px 20px;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-  }
-  &__btn {
-    float: right;
-    color: #fff;
-  }
-  
-  &__sub {
-    color: #fff;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 20px 20px 0 20px;
-  }
-  &__detail {
-    color: #fff;
-    font-size: 11px;
-    font-weight: bold;
-    padding: 5px 20px 40px 20px; 
-  }
-}
-
 .contents {
   height: 100vh;
   width: calc(100vw - 300px);
-  padding: 0 40px;
   float: right;
-  position: absolute;
-  margin-left: 260px;
-  &__main {
-    font-size: 20px;
-    color: #333333;
-    padding: 28px 40px 0 40px;
+  .header {
     border: 1px solid #eeeeee;
-    &--user {
+    &__name {
+      padding: 35px 0 15px 40px;
+      font-size: 20px;
+      color: #333333;
+    }
+    &__user {
       font-size: 12px;
       color: #999999;
-      border: #eeeeee;
-      padding-top: 15px;
     }
-    &--btn {
+    &__btn {
       display: inline-block;
       color: #38AEF0;
       border: solid 2px #38AEF0;
@@ -64,70 +21,47 @@
       line-height: 40px;
       padding: 0 20px;
       float: right;
-      margin-top: 0;
+      margin: 28px 40px 0 0;
     }
   }
-  &__sub {
-    font-size: 20px;
-    color: #333333;
-    margin: 46px 0 10px 40px;
-    position: relative;
-  }
-  &__time {
-    font-size: 12px;
-    color: #999999;
-    position: absolute;
-    top: 147px;
-    left: 180px;
-  }
-  &__message {
-    padding: 0 40px 40px 40px;
-    font-size: 12px;
-  }
-  &__text {
-    font-size: 12px;
-    color: #999999;
-    padding-bottom: 10px;
-    padding-left: 40px;
-  }
-}
 
-.footer {
-  background-color: #999999;
-  bottom: 0px;
-  height: 90px;
-  position: fixed;
-  width: calc(100vw - 300px);
-  right: 0;
-  &__field {
-    background-color: #fff;
-    height: 50px;
-    position: absolute;
-    width: 80%;
-    top: 20px;
-    left: 50px;
-    line-height: 50px;
-    font-size: 16px;
-    color: #434A54;
-    border-radius: 3px;
-    padding-left: 10px;
-    &--image {
-      float: right;
+  .form {
+    background-color: #999999;
+    bottom: 0px;
+    height: 90px;
+    position: fixed;
+    width: calc(100vw - 300px);
+    right: 0;
+    &__message {
+      background-color: #fff;
+      height: 50px;
       position: absolute;
-      right: 180px;
-      top: 35px;
+      width: 80%;
+      top: 20px;
+      left: 50px;
+      line-height: 50px;
+      font-size: 16px;
       color: #434A54;
+      border-radius: 3px;
+      padding-left: 10px;
+      &__image {
+        float: right;
+        position: absolute;
+        right: 180px;
+        top: 35px;
+        color: #434A54;
+      }
     }
-  }
-  &__btn {
-    display: inline-block;
-    background-color: #38AEF0;
-    color: #fff;
-    border: solid 2px #38AEF0;
-    border-radius: 3px;
-    line-height: 50px;
-    padding: 0 30px;
-    float: right;
-    margin: 20px 40px 20px 15px;
+    &__submit {
+      display: inline-block;
+      background-color: #38AEF0;
+      color: #fff;
+      border: solid 2px #38AEF0;
+      border-radius: 3px;
+      line-height: 50px;
+      padding: 0 30px;
+      float: right;
+      margin-right: 40px ;
+    }
   }
 }

@@ -1,0 +1,22 @@
+.messages {
+  height: calc(100vh - 98px - 90px);
+  margin: 46px 40px 40px 40px;
+  .message {
+    &__user {
+      font-size: 20px;
+      color: #333333;
+      float: left;
+    }
+    &__time {
+      font-size: 12px;
+      color: #999999; 
+      padding-top: 8px;
+    }
+  }
+  .lower-message {
+    &__text {
+      font-size: 12px;
+      padding: 10px 0 40px 0;
+    }
+  }
+}

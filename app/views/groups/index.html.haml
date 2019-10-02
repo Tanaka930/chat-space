@@ -1,47 +1,25 @@
 .wrapper
-
-= render 'shared/side_bar'
-
-.header
-  グループを作成しました
-.sidebar
-  .sidebar__main
-    = current_user.name
-    =link_to new_group_path, class: "sidebar__btn" do
-      =fa_icon 'edit'
-    =link_to edit_user_path(current_user), class: "sidebar__btn" do
-      =fa_icon 'cog'
-  .sidebar__sub
-    test-sub
-  .sidebar__detail
-    さようなら
-  .sidebar__sub
-    sample-group
-  .sidebar__detail
-    hello!
-  .sidebar__sub
-    example
-  .sidebar__detail
-    まだメッセージがありません
+  
+= render 'devise/shared/side_bar'
 
 .contents
-  .contents__main
-    sample
-    .contents__main--btn
+  .header
+    .header__btn
       Edit
-    .contents__main--user
+    .header__name
+      sample
+  
+    .header__user
       members seo neko
 
-  .contents__sub
-    test-user
-  .contents__time
-    =Time.now
-  .contents__message
-    こんにちは!
-  .contents__text
-    text-oooo 2019/09/13(Wed) 17:50:42
-  .contents__text
-    さようなら
+  .message
+    .message__user
+      test-user
+    .message__time
+
+    .message__text
+      こんにちは!
+
 .footer
   .footer__field
     type field
