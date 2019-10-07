@@ -135,10 +135,7 @@ GEM
     nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
-<<<<<<< Updated upstream
     public_suffix (4.0.1)
-=======
->>>>>>> Stashed changes
     puma (3.12.1)
     rack (2.0.7)
     rack-test (0.6.3)
@@ -175,10 +172,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-<<<<<<< Updated upstream
     regexp_parser (1.6.0)
-=======
->>>>>>> Stashed changes
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -194,7 +188,6 @@ GEM
     rspec-mocks (3.8.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.8.0)
-<<<<<<< Updated upstream
     rspec-rails (3.8.2)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
@@ -206,9 +199,6 @@ GEM
     rspec-support (3.8.2)
     ruby-vips (2.0.15)
       ffi (~> 1.9)
-=======
-    rspec-support (3.8.2)
->>>>>>> Stashed changes
     ruby_parser (3.14.0)
       sexp_processor (~> 4.9)
     sass (3.7.4)
@@ -270,12 +260,9 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.2)
   devise
-<<<<<<< Updated upstream
   factory_bot_rails
   faker
   font-awesome-rails
-=======
->>>>>>> Stashed changes
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails
@@ -284,13 +271,9 @@ DEPENDENCIES
   mysql2 (>= 0.3.18, < 0.6.0)
   puma (~> 3.0)
   rails (~> 5.0.7, >= 5.0.7.2)
-<<<<<<< Updated upstream
   rails-controller-testing
   rspec
   rspec-rails (~> 3.5)
-=======
-  rspec
->>>>>>> Stashed changes
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
