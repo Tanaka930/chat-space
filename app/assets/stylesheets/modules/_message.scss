@@ -1,6 +1,7 @@
 .messages {
-  height: calc(100vh - 98px - 90px);
-  margin: 46px 40px 40px 40px;
+  height: calc(100vh - 282px);
+  padding: 46px 40px;
+  overflow: scroll;
   .message {
     &__user {
       font-size: 20px;
