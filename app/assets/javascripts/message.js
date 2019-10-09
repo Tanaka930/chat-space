@@ -34,12 +34,13 @@ $(function() {
       var html = buildPost(post);
       $('.messages').append(html)
       $('#message_content').val('')
-      $('.form__submit').attr('disabled', false);
+      // $('.form__submit').attr('disabled', false);
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       return false
     })
     .fail(function() {
       alert('エラー');
     })
+    return false;
   })
 });  
