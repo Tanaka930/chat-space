@@ -1,44 +1,25 @@
 $(function() {
 
   function buildPost(message){
-    var image = (message.image)
-    if ( image !== null ) {
-      var html =
-        `<div class="message">
-          <div class="message__user">
-            ${message.user_name}
+    var image = message.image ? `<img src = ${message.image} width="256" height="256">` : "";
+    var html =
+      `<div class="message">
+        <div class="message__user">
+          ${message.user_name}
+        </div>
+        <div class="message__time">
+          ${message.date}
+        </div>
+        <div class="lower-message">
+          <div class="lower-message__text">
+            ${message.content}
           </div>
-          <div class="message__time">
-            ${message.date}
+          <div class = 'lower-message__image'>
+            ${image}
           </div>
-          <div class="lower-message">
-            <div class="lower-message__text">
-              ${message.content}
-            </div>
-            <div class = 'lower-message__image'>
-              <img src = ${image} width="256" height="256">
-            </div>
-          </div>
-        </div>`
-      return html;
-    } else {
-      var html =
-        `<div class="message">
-          <div class="message__user">
-            ${message.user_name}
-          </div>
-          <div class="message__time">
-            ${message.date}
-          </div>
-          <div class="lower-message">
-            <div class="lower-message__text">
-              ${message.content}
-            </div>
-            <img src = "" >
-          </div>
-        </div>`
-      return html;
-    };
+        </div>
+      </div>`
+    return html;
   }
 
   $('#new_message').on('submit', function(e){
