@@ -38,10 +38,8 @@ $(function() {
         html = $(html).append(`<div class = 'lower-message__image'><img src = '${post.image.url}' width="256" height="256"}</div>`)
       }
       $('.messages').append(html)
-      $('#message_content').val('')
-      $('#message_image').val('')
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
-      return false
+      $('form')[0].reset();
     })
     .fail(function() {
       alert('エラー');
