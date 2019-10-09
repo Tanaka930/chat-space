@@ -12,6 +12,9 @@ $(function() {
                     <div class="lower-message__text">
                       ${post.content}
                     </div>
+                    <div class="lower-message__text">
+                      <img src = '${post.image.url}', width="256" height="256">
+                    </div>
                   </div>
                 </div>`
     return html;
