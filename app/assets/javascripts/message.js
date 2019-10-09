@@ -1,7 +1,8 @@
 $(function() {
 
   function buildPost(message){
-    if ( message.image !== null ) {
+    var image = (message.image)
+    if ( image !== null ) {
       var html =
         `<div class="message">
           <div class="message__user">
@@ -15,7 +16,7 @@ $(function() {
               ${message.content}
             </div>
             <div class = 'lower-message__image'>
-              <img src = ${message.image} width="256" height="256">
+              <img src = ${image} width="256" height="256">
             </div>
           </div>
         </div>`
