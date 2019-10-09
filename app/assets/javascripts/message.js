@@ -12,9 +12,6 @@ $(function() {
                     <div class="lower-message__text">
                       ${post.content}
                     </div>
-                    <div class="lower-message__text">
-                      <img src = '${post.image.url}', width="256" height="256">
-                    </div>
                   </div>
                 </div>`
     return html;
@@ -35,9 +32,14 @@ $(function() {
     })
     .done(function(post) {
       var html = buildPost(post);
+      if (post.image.url == null){
+        html = $(html).append()
+      } else {
+        html = $(html).append(`<div class = 'lower-message__image'><img src = '${post.image.url}' width="256" height="256"}</div>`)
+      }
       $('.messages').append(html)
       $('#message_content').val('')
-      // $('.form__submit').attr('disabled', false);
+      $('#message_image').val('')
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       return false
     })
