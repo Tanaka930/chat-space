@@ -1,22 +1,43 @@
 $(function() {
 
-  function buildPost(post){
-    var html = `<div class="message">
-                  <div class="message__user">
-                    ${post.user_name}
-                  </div>
-                  <div class="message__time">
-                    ${post.created_at}
-                  </div>
-                  <div class="lower-message">
-                    <div class="lower-message__text">
-                      ${post.content}
-                    </div>
-                  </div>
-                </div>`
-    return html;
+  function buildPost(message){
+    if ( message.image.url !== null ) {
+      var html =
+        `<div class="message">
+          <div class="message__user">
+            ${message.user_name}
+          </div>
+          <div class="message__time">
+            ${message.date}
+          </div>
+          <div class="lower-message">
+            <div class="lower-message__text">
+              ${message.content}
+            </div>
+            <div class = 'lower-message__image'>
+              <img src = '${message.image.url}' width="256" height="256"}
+            </div>
+          </div>
+        </div>`
+      return html;
+    } else {
+      var html =
+        `<div class="message">
+          <div class="message__user">
+            ${message.user_name}
+          </div>
+          <div class="message__time">
+            ${message.date}
+          </div>
+          <div class="lower-message">
+            <div class="lower-message__text">
+              ${message.content}
+            </div>
+          </div>
+        </div>`
+      return html;
+    };
   }
-
 
   $('#new_message').on('submit', function(e){
     e.preventDefault();
@@ -30,13 +51,8 @@ $(function() {
       processData: false,
       contentType: false
     })
-    .done(function(post) {
-      var html = buildPost(post);
-      if (post.image.url == null){
-        html = $(html).append()
-      } else {
-        html = $(html).append(`<div class = 'lower-message__image'><img src = '${post.image.url}' width="256" height="256"}</div>`)
-      }
+    .done(function(date) {
+      var html = buildPost(date);
       $('.messages').append(html)
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       $('form')[0].reset();
@@ -45,5 +61,5 @@ $(function() {
       alert('エラー');
     })
     return false;
-  })
+})
 });  
