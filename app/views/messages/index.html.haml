@@ -4,20 +4,23 @@
 
 .contents
   .header
+    .header__left-box
+      .header__left-box__group
+        sample
+      .header__left-box__member
+        members seo neko
     .header__btn
       Edit
-    .header__name
-      sample
-    .header__user
-      members seo neko
+
   .messages
     = render @messages
 
   .form
     = form_for [@group, @message] do |f|
-      =f.text_field :content, class: 'form__message', placeholder: 'type a message'
-      .form__mask
-        = f.label :image, class: "form__mask__image" do
-          = fa_icon 'picture-o', class: 'icon'
-          = f.file_field :image, class: 'hidden'
-      = f.submit 'Send', class: 'form__submit'
+      .form-box
+        =f.text_field :content, class: 'form-box__message', placeholder: 'type a message'
+        .form-box__mask
+          = f.label :image, class: "form-box__mask__image" do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form-box__submit'
