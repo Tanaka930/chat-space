@@ -1,9 +1,9 @@
 $(function() {
 
-  function buildPost(message){
-    var image = message.image ? `<img src = ${message.image} width="256" height="256">` : "";
+  function buildHTML(message){
+    var image = message.image ? `<img src = '${message.image}' width="200" height="200">` : "";
     var html =
-      `<div class="message">
+      `<div class="message" data-message-id="${message.id}">
         <div class="message__user">
           ${message.user_name}
         </div>
@@ -14,12 +14,12 @@ $(function() {
           <div class="lower-message__text">
             ${message.content}
           </div>
-          <div class = 'lower-message__image'>
+          <div class="lower-message__image">
             ${image}
           </div>
         </div>
       </div>`
-    return html;
+    return html
   }
 
   $('#new_message').on('submit', function(e){
@@ -34,8 +34,8 @@ $(function() {
       processData: false,
       contentType: false
     })
-    .done(function(date) {
-      var html = buildPost(date);
+    .done(function(message) {
+      var html = buildHTML(message);
       $('.messages').append(html)
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       $('form')[0].reset();
@@ -44,5 +44,29 @@ $(function() {
       alert('エラー');
     })
     return false;
-})
+  })
+
+  var reloadMessages = function() {
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+      last_message_id = $('.message:last').data("message-id");
+      $.ajax({
+        url: "api/messages",
+        type: 'GET',
+        dataType: 'json',
+        data: {id: last_message_id}
+      })
+      .done(function(messages) {
+        var insertHTML = '';
+        messages.forEach(function (message) {
+        insertHTML = buildHTML(message);
+        $('.messages').append(insertHTML); 
+        $('.messages').animate({scrollTop: $('.messages').height()})
+        })
+      })
+      .fail(function() {
+        alert('更新に失敗しました');
+      });
+    };
+  } 
+  setInterval(reloadMessages, 5000); 
 });  
