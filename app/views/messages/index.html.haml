@@ -6,11 +6,12 @@
   .header
     .header__left-box
       .header__left-box__group
-        sample
+        = @group.name
       .header__left-box__member
-        members seo neko
+        members:
+        = current_user.name
     .header__btn
-      Edit
+      = link_to 'Edit', edit_group_path(@group), class: "button"
 
   .messages
     = render @messages

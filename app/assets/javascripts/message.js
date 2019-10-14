@@ -4,21 +4,23 @@ $(function() {
     var image = message.image ? `<img src = '${message.image}' width="200" height="200">` : "";
     var html =
       `<div class="message" data-message-id="${message.id}">
-        <div class="message__user">
-          ${message.user_name}
-        </div>
-        <div class="message__time">
-          ${message.date}
-        </div>
-        <div class="lower-message">
-          <div class="lower-message__text">
-            ${message.content}
-          </div>
-          <div class="lower-message__image">
-            ${image}
-          </div>
-        </div>
-      </div>`
+         <div class="upper-message">
+           <div class="upper-message__user">
+             ${message.user_name}
+           </div>
+           <div class="upper-message__time">
+             ${message.date}
+           </div>
+         </div>
+         <div class="lower-message">
+           <div class="lower-message__text">
+             ${message.content}
+           </div>
+           <div class="lower-message__image">
+             ${image}
+           </div>
+         </div>
+       </div>`
     return html
   }
 

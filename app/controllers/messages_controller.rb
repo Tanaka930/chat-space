@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_group
+  before_action :set
 
   def index
     @message = Message.new
@@ -28,5 +29,11 @@ class MessagesController < ApplicationController
 
   def set_group
     @group = Group.find(params[:group_id])
+  end
+
+  def set
+    @group = Group.find(params[:group_id])
+    @users = @group.users
+    Time.zone ='Tokyo'
   end
 end
