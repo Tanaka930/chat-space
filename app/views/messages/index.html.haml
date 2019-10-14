@@ -9,7 +9,7 @@
         = @group.name
       .header__left-box__member
         members:
-        = current_user.name
+        = @users.pluck(:name).join(",")
     .header__btn
       = link_to 'Edit', edit_group_path(@group), class: "button"
 
