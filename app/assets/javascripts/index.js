@@ -26,7 +26,7 @@ $(document).on('turbolinks:load', function() {
                         <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
                   </div>`
       member_list.append(html);
-        }
+    }
 
     $("#user-search-field").on("keyup", function() {
       var input = $("#user-search-field").val();
@@ -38,7 +38,7 @@ $(document).on('turbolinks:load', function() {
         dataType: 'json'
       })
       .done(function(members) {
-        $(".chat-group-form__field clearfix").empty();
+        $("#user-search-result").empty();
         if (members.length !== 0) {
           members.forEach(function(user){
             appendUser(user);
