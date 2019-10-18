@@ -25,9 +25,10 @@
 
       #chat-group-users
         .chat-group-user.clearfix
-          %p.chat-group-user__name 
-            = current_user.name
-
+          %p.chat-group-user__name
+          - if @users.present?
+            = @users.pluck(:name).join(",")
+          = current_user.name unless @user.present?
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
